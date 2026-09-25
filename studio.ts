@@ -1,0 +1,76 @@
+export const studioConfig = {
+  app: {
+    name: 'MK97 Creative Studio X',
+    shortName: 'MK97 Studio',
+    defaultRoute: 'home',
+    mobileBreakpoint: 720,
+    autosaveMs: 2500,
+    maxUndoSteps: 100,
+  },
+  brand: {
+    logo: 'assets/mk97-logo.png',
+    primary: '#F1C45F',
+    background: '#05080C',
+    surface: '#0E141B',
+    teal: '#43DFCE',
+    blue: '#268BFF',
+    danger: '#FF6E7D',
+  },
+  canvas: {
+    presets: [
+      { id: 'instagram-portrait', label: 'Instagram Portrait', width: 1080, height: 1350 },
+      { id: 'instagram-square', label: 'Instagram Square', width: 1080, height: 1080 },
+      { id: 'story-reel', label: 'Story / Reel', width: 1080, height: 1920 },
+      { id: 'facebook-post', label: 'Facebook Post', width: 1200, height: 1500 },
+      { id: 'youtube-thumb', label: 'YouTube Thumbnail', width: 1280, height: 720 },
+    ],
+    defaultPreset: 'instagram-portrait',
+    snap: 8,
+    safeArea: true,
+  },
+  templates: {
+    count: 100,
+    categories: ['wicket','runs','match','schedule','mvp','team-vs-team','playing-xi','result'],
+    premiumByDefault: true,
+    defaultGroundBackgrounds: 5,
+    layeredEffects: ['fire-edge','sparks','smoke','light-streaks'],
+    textures: ['grain','halftone','grid','diagonal'],
+  },
+  editor: {
+    features: {
+      dragLayers: true,
+      layerLocking: true,
+      opacity: true,
+      blendModes: true,
+      textStyles: true,
+      duplicateDelete: true,
+      guidesAndSnap: true,
+      versionHistory: true,
+      backgroundRemovalHook: true,
+      generativeFillHook: true,
+    },
+  },
+  video: {
+    maxTracks: 32,
+    previewFps: 60,
+    supportedImport: ['video/mp4','video/webm','video/quicktime'],
+    export: [
+      { label: '1080p', width: 1920, height: 1080, fps: [30,60] },
+      { label: '4K', width: 3840, height: 2160, fps: [30,60] },
+    ],
+    tools: ['split','trim','speed-ramp','reverse','stabilize','captions','transitions','filters','color-grade','audio','overlays','beat-sync'],
+  },
+  ai: {
+    enabled: true,
+    tools: ['magic-cutout','auto-captions','highlight-detection','style-match','auto-resize','beat-sync','smart-enhance','generate-poster'],
+    apiBase: '/api/ai',
+  },
+  publish: {
+    saveToDevice: true,
+    webShare: true,
+    providers: {
+      instagram: { enabled: true, connectUrl: '/api/meta/connect/instagram', publishUrl: '/api/meta/publish' },
+      facebook: { enabled: true, connectUrl: '/api/meta/connect/facebook', publishUrl: '/api/meta/publish' },
+    },
+  },
+} as const;
